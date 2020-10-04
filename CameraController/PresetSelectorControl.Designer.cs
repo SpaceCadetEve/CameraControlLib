@@ -59,10 +59,11 @@
             this.presetTreeView.HideSelection = false;
             this.presetTreeView.ImageIndex = 0;
             this.presetTreeView.ImageList = this.presetStatusImages;
-            this.presetTreeView.Location = new System.Drawing.Point(3, 3);
+            this.presetTreeView.Location = new System.Drawing.Point(8, 7);
+            this.presetTreeView.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.presetTreeView.Name = "presetTreeView";
             this.presetTreeView.SelectedImageIndex = 0;
-            this.presetTreeView.Size = new System.Drawing.Size(207, 287);
+            this.presetTreeView.Size = new System.Drawing.Size(545, 679);
             this.presetTreeView.StateImageList = this.presetStatusImages;
             this.presetTreeView.TabIndex = 0;
             this.presetTreeView.AfterCollapse += new System.Windows.Forms.TreeViewEventHandler(this.presetTreeView_OnNodeInteraction);
@@ -73,16 +74,17 @@
             // 
             // backgroundContextMenu
             // 
+            this.backgroundContextMenu.ImageScalingSize = new System.Drawing.Size(40, 40);
             this.backgroundContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addGroupToolStripMenuItem});
             this.backgroundContextMenu.Name = "backgroundContextMenu";
-            this.backgroundContextMenu.Size = new System.Drawing.Size(142, 26);
+            this.backgroundContextMenu.Size = new System.Drawing.Size(385, 105);
             // 
             // addGroupToolStripMenuItem
             // 
             this.addGroupToolStripMenuItem.Image = global::CameraController.Properties.Resources.NewGroup;
             this.addGroupToolStripMenuItem.Name = "addGroupToolStripMenuItem";
-            this.addGroupToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+            this.addGroupToolStripMenuItem.Size = new System.Drawing.Size(288, 46);
             this.addGroupToolStripMenuItem.Text = "Add Group...";
             this.addGroupToolStripMenuItem.Click += new System.EventHandler(this.addGroupToolStripMenuItem_Click);
             // 
@@ -97,6 +99,7 @@
             // 
             // presetContextMenu
             // 
+            this.presetContextMenu.ImageScalingSize = new System.Drawing.Size(40, 40);
             this.presetContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.applyPresetMenuItem,
             this.keepPresetAppliedToolStripMenuItem,
@@ -105,13 +108,13 @@
             this.renameToolStripMenuItem,
             this.deleteToolStripMenuItem});
             this.presetContextMenu.Name = "presetContextMenu";
-            this.presetContextMenu.Size = new System.Drawing.Size(188, 142);
+            this.presetContextMenu.Size = new System.Drawing.Size(406, 240);
             this.presetContextMenu.Opening += new System.ComponentModel.CancelEventHandler(this.presetContextMenu_Opening);
             // 
             // applyPresetMenuItem
             // 
             this.applyPresetMenuItem.Name = "applyPresetMenuItem";
-            this.applyPresetMenuItem.Size = new System.Drawing.Size(187, 22);
+            this.applyPresetMenuItem.Size = new System.Drawing.Size(405, 46);
             this.applyPresetMenuItem.Text = "Apply Once";
             this.applyPresetMenuItem.Click += new System.EventHandler(this.applyPresetMenuItem_Click);
             // 
@@ -119,19 +122,19 @@
             // 
             this.keepPresetAppliedToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.keepPresetAppliedToolStripMenuItem.Name = "keepPresetAppliedToolStripMenuItem";
-            this.keepPresetAppliedToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
+            this.keepPresetAppliedToolStripMenuItem.Size = new System.Drawing.Size(405, 46);
             this.keepPresetAppliedToolStripMenuItem.Text = "Keep Preset Applied";
             this.keepPresetAppliedToolStripMenuItem.Click += new System.EventHandler(this.keepPresetAppliedToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(184, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(402, 6);
             // 
             // savePresetToolStripMenuItem
             // 
             this.savePresetToolStripMenuItem.Name = "savePresetToolStripMenuItem";
-            this.savePresetToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
+            this.savePresetToolStripMenuItem.Size = new System.Drawing.Size(405, 46);
             this.savePresetToolStripMenuItem.Text = "Save Preset";
             this.savePresetToolStripMenuItem.Click += new System.EventHandler(this.savePresetToolStripMenuItem_Click);
             // 
@@ -139,29 +142,30 @@
             // 
             this.renameToolStripMenuItem.Image = global::CameraController.Properties.Resources.Rename;
             this.renameToolStripMenuItem.Name = "renameToolStripMenuItem";
-            this.renameToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
+            this.renameToolStripMenuItem.Size = new System.Drawing.Size(405, 46);
             this.renameToolStripMenuItem.Text = "Rename";
             this.renameToolStripMenuItem.Click += new System.EventHandler(this.renameToolStripMenuItem_Click);
             // 
             // deleteToolStripMenuItem
             // 
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(405, 46);
             this.deleteToolStripMenuItem.Text = "Delete";
             this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
             // groupContextMenu
             // 
+            this.groupContextMenu.ImageScalingSize = new System.Drawing.Size(40, 40);
             this.groupContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addPresetToolStripMenuItem,
             this.renameGroupToolStripMenuItem});
             this.groupContextMenu.Name = "groupContextMenu";
-            this.groupContextMenu.Size = new System.Drawing.Size(162, 48);
+            this.groupContextMenu.Size = new System.Drawing.Size(338, 96);
             // 
             // addPresetToolStripMenuItem
             // 
             this.addPresetToolStripMenuItem.Name = "addPresetToolStripMenuItem";
-            this.addPresetToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.addPresetToolStripMenuItem.Size = new System.Drawing.Size(337, 46);
             this.addPresetToolStripMenuItem.Text = "Add Preset...";
             this.addPresetToolStripMenuItem.Click += new System.EventHandler(this.addPresetToolStripMenuItem_Click);
             // 
@@ -169,17 +173,18 @@
             // 
             this.renameGroupToolStripMenuItem.Image = global::CameraController.Properties.Resources.Rename;
             this.renameGroupToolStripMenuItem.Name = "renameGroupToolStripMenuItem";
-            this.renameGroupToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.renameGroupToolStripMenuItem.Size = new System.Drawing.Size(337, 46);
             this.renameGroupToolStripMenuItem.Text = "Rename group...";
             this.renameGroupToolStripMenuItem.Click += new System.EventHandler(this.renameGroupToolStripMenuItem_Click);
             // 
             // PresetSelectorControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.presetTreeView);
+            this.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Name = "PresetSelectorControl";
-            this.Size = new System.Drawing.Size(213, 293);
+            this.Size = new System.Drawing.Size(568, 699);
             this.backgroundContextMenu.ResumeLayout(false);
             this.presetContextMenu.ResumeLayout(false);
             this.groupContextMenu.ResumeLayout(false);

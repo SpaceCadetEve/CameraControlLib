@@ -244,8 +244,12 @@ namespace CameraController
             var preset = GetSelectedNodeTag<Preset>();
             if (preset != null)
             {
-                if (MessageBox.Show("Are you sure you want to save over this preset?", "Save preset?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show("Are you sure you want to delete this preset?", "Save preset?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
+                    foreach (var group in Settings.PresetGroups)
+                    {
+                        group.Presets.Remove(preset);
+                    }
                     SavePresets();
                 }
             }

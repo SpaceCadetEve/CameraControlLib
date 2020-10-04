@@ -33,6 +33,7 @@
             this.presetTreeView = new System.Windows.Forms.TreeView();
             this.backgroundContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.addGroupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteGroupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.presetStatusImages = new System.Windows.Forms.ImageList(this.components);
             this.presetContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.applyPresetMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -44,6 +45,7 @@
             this.groupContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.addPresetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.renameGroupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteGroupToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.backgroundContextMenu.SuspendLayout();
             this.presetContextMenu.SuspendLayout();
             this.groupContextMenu.SuspendLayout();
@@ -76,9 +78,10 @@
             // 
             this.backgroundContextMenu.ImageScalingSize = new System.Drawing.Size(40, 40);
             this.backgroundContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addGroupToolStripMenuItem});
+            this.addGroupToolStripMenuItem,
+            this.deleteGroupToolStripMenuItem});
             this.backgroundContextMenu.Name = "backgroundContextMenu";
-            this.backgroundContextMenu.Size = new System.Drawing.Size(385, 105);
+            this.backgroundContextMenu.Size = new System.Drawing.Size(289, 96);
             // 
             // addGroupToolStripMenuItem
             // 
@@ -87,6 +90,11 @@
             this.addGroupToolStripMenuItem.Size = new System.Drawing.Size(288, 46);
             this.addGroupToolStripMenuItem.Text = "Add Group...";
             this.addGroupToolStripMenuItem.Click += new System.EventHandler(this.addGroupToolStripMenuItem_Click);
+            // 
+            // deleteGroupToolStripMenuItem
+            // 
+            this.deleteGroupToolStripMenuItem.Name = "deleteGroupToolStripMenuItem";
+            this.deleteGroupToolStripMenuItem.Size = new System.Drawing.Size(288, 46);
             // 
             // presetStatusImages
             // 
@@ -158,14 +166,15 @@
             this.groupContextMenu.ImageScalingSize = new System.Drawing.Size(40, 40);
             this.groupContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addPresetToolStripMenuItem,
-            this.renameGroupToolStripMenuItem});
+            this.renameGroupToolStripMenuItem,
+            this.deleteGroupToolStripMenuItem1});
             this.groupContextMenu.Name = "groupContextMenu";
-            this.groupContextMenu.Size = new System.Drawing.Size(338, 96);
+            this.groupContextMenu.Size = new System.Drawing.Size(385, 197);
             // 
             // addPresetToolStripMenuItem
             // 
             this.addPresetToolStripMenuItem.Name = "addPresetToolStripMenuItem";
-            this.addPresetToolStripMenuItem.Size = new System.Drawing.Size(337, 46);
+            this.addPresetToolStripMenuItem.Size = new System.Drawing.Size(384, 46);
             this.addPresetToolStripMenuItem.Text = "Add Preset...";
             this.addPresetToolStripMenuItem.Click += new System.EventHandler(this.addPresetToolStripMenuItem_Click);
             // 
@@ -173,9 +182,16 @@
             // 
             this.renameGroupToolStripMenuItem.Image = global::CameraController.Properties.Resources.Rename;
             this.renameGroupToolStripMenuItem.Name = "renameGroupToolStripMenuItem";
-            this.renameGroupToolStripMenuItem.Size = new System.Drawing.Size(337, 46);
+            this.renameGroupToolStripMenuItem.Size = new System.Drawing.Size(384, 46);
             this.renameGroupToolStripMenuItem.Text = "Rename group...";
             this.renameGroupToolStripMenuItem.Click += new System.EventHandler(this.renameGroupToolStripMenuItem_Click);
+            // 
+            // deleteGroupToolStripMenuItem1
+            // 
+            this.deleteGroupToolStripMenuItem1.Name = "deleteGroupToolStripMenuItem1";
+            this.deleteGroupToolStripMenuItem1.Size = new System.Drawing.Size(384, 46);
+            this.deleteGroupToolStripMenuItem1.Text = "Delete Group";
+            this.deleteGroupToolStripMenuItem1.Click += new System.EventHandler(this.deleteGroupToolStripMenuItem1_Click);
             // 
             // PresetSelectorControl
             // 
@@ -208,5 +224,7 @@
         private System.Windows.Forms.ToolStripMenuItem addGroupToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem keepPresetAppliedToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem deleteGroupToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deleteGroupToolStripMenuItem1;
     }
 }

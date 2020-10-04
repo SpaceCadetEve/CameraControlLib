@@ -244,12 +244,25 @@ namespace CameraController
             var preset = GetSelectedNodeTag<Preset>();
             if (preset != null)
             {
-                if (MessageBox.Show("Are you sure you want to delete this preset?", "Save preset?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show("Are you sure you want to delete this preset?", "Delete preset?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     foreach (var group in Settings.PresetGroups)
                     {
                         group.Presets.Remove(preset);
                     }
+                    SavePresets();
+                }
+            }
+        }
+
+        private void deleteGroupToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            var group = GetSelectedNodeTag<PresetGroup>();
+            if (group != null)
+            {
+                if (MessageBox.Show("Are you sure you want to delete this group?", "Delete group?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    Settings.PresetGroups.Remove(group);
                     SavePresets();
                 }
             }

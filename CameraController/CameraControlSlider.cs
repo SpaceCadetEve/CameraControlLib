@@ -77,6 +77,11 @@ namespace CameraController
 
         private void Property_Refreshed(object sender, EventArgs e)
         {
+            if (!valueTextBox.ContainsFocus)
+            {
+                valueTextBox.Text = Property.Value.ToString();
+            }
+
             valueTrackbar.Value = Property.Value;
             if (!modeSelector.DroppedDown)
                 modeSelector.SelectedValue = Property.Flags;
@@ -99,6 +104,35 @@ namespace CameraController
                 Property.Flags = (CameraPropertyFlags)modeSelector.SelectedValue;
                 Property.Save();
             }
+        }
+
+        private void valueTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (!valueTextBox.ContainsFocus)
+            {
+                return;
+            }
+
+            if (Property != null && Property.Supported)
+            {
+                int value = valueTrackbar.Value;
+
+                if (Int32.TryParse(valueTextBox.Text, out value))
+                {
+                    if (value >= valueTrackbar.Minimum && value <= valueTrackbar.Maximum)
+                    {
+                        Property.Value = value;
+                        Property.Save();
+                    }
+                }
+            }
+        }
+
+        private void valueTextBox_LostFocus(object sender, EventArgs e)
+        {
+            valueTextBox.TextChanged -= valueTextBox_TextChanged;
+            valueTextBox.Text = Property.Value.ToString();
+            valueTextBox.TextChanged += valueTextBox_TextChanged;
         }
     }
 }

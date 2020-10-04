@@ -46,7 +46,11 @@ namespace CameraController
             availableCamerasComboBox.DataSource = defaultCameraList;
             availableCamerasComboBox.DisplayMember = "Text";
             availableCamerasComboBox.ValueMember = "CameraDescriptor";
-            availableCamerasComboBox.SelectedValue = cameraToSelect;
+
+            if (cameraToSelect != null)
+            {
+                availableCamerasComboBox.SelectedValue = cameraToSelect;
+            }
 
             visiblePropertiesListbox.DataSource = _cameraPropertyDescriptors;
             visiblePropertiesListbox.DisplayMember = "Name";

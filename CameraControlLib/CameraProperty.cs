@@ -116,10 +116,12 @@ namespace CameraControlLib
         {
             int value;
             CameraControlFlags flags;
-            _cameraControl.Get(_cameraProperty, out value, out flags);
-            Value = value;
-            Flags = (CameraPropertyFlags)flags;
-            OnRefresh();
+            if (_cameraControl.Get(_cameraProperty, out value, out flags) == 0)
+            {
+                Value = value;
+                Flags = (CameraPropertyFlags)flags;
+                OnRefresh();
+            }
         }
 
         internal static CameraPropertyDescriptor CreateDescriptor(string id, string name, CameraControlProperty cameraProperty)
@@ -186,10 +188,12 @@ namespace CameraControlLib
         {
             int value;
             VideoProcAmpFlags flags;
-            _videoAmpControl.Get(_videoAmpProperty, out value, out flags);
-            Value = value;
-            Flags = (CameraPropertyFlags)flags;
-            OnRefresh();
+            if (_videoAmpControl.Get(_videoAmpProperty, out value, out flags) == 0)
+            {
+                Value = value;
+                Flags = (CameraPropertyFlags)flags;
+                OnRefresh();
+            }
         }
 
         internal static VideoProcAmpPropertyDescriptor CreateDescriptor(string id, string name, VideoProcAmpProperty videoProcProperty)
